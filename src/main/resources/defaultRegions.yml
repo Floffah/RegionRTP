@@ -1,0 +1,9 @@
+---
+# You can edit regions here, or use the /rtpa createregion command!
+regions:
+  - name: "spawn"
+    world: "world"
+    minX: -100
+    minZ: -100
+    maxX: 100
+    maxZ: 100

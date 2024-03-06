@@ -1,0 +1,16 @@
+# These messages only apply to regular-player-facing messages, admin-facing messages are not affected
+# Also they follow the MiniMessage format
+# See more info here: https://docs.advntr.dev/minimessage/format.html
+
+# Prefix to apply to all messages, should end in <reset> as messages are concatenated
+prefix: '<reset>'
+
+messages:
+    no-permission: '<red>You do not have permission to do that!'
+    rtp-usage: '<red>Usage: /rtp <region>'
+    rtp-usage-others: '<red>Usage: /rtp <region> [player]' # Only displayed if they have the permission regionrtp.rtp.others
+    no-console: '<red>You cannot use this command from the console!'
+    player-not-found: '<red>Player not found!'
+    region-not-found: "<red>Region doesn't exist!"
+    no-location-found: '<red>Could not find a suitable location!'
+    teleported: '<green>Teleported to <italic><region_name>' # Accepts placeholders: <region_name>, <player_name>

@@ -1,0 +1,23 @@
+---
+# Config version. Do not touch
+version: 1
+# How many tries before failing to find a location, more likely to occur with a stricter disallow policy
+maxTries: 20
+# The first Y coordinate to try - the plugin will move up or down until it hits a valid surface or will fail once it hits a disallowed block
+# Make this something sensible, so we don't need to look too far
+averageY: 64
+# Whether to fail if the algorithm hits a disallowed blocks
+disallowedBlocksEnabled: true
+# The blocks to disallow
+disallowedBlocks:
+  - "air"
+  - "water"
+  - "chest"
+# Whether to add a global region to the list (tp anywhere)
+# If this is disabled, players won't be able to do /rtp on it&apos;s own unless they supply a region name
+enableGlobalRegion: true
+towny:
+  # Whether to prevent players from teleporting to towny towns
+  # Only works if Towny is installed
+  disallowTowns: true
+  allowOpenTowns: false

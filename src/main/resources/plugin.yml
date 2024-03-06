@@ -1,0 +1,28 @@
+name: RegionRTP
+version: '${project.version}'
+main: dev.floffah.regionrtp.RegionRTP
+api-version: '1.20'
+soft-depend: [Towny]
+commands:
+  randomtp:
+    description: Randomly teleport to a location
+    usage: /rtp <region>
+    permission: regionrtp.rtp
+    aliases: [rtp]
+  rtpadmin:
+    description: Randomly teleport to a location
+    usage: /rtpa <createregion|deleteregion|setpoint|reload>
+    permission: regionrtp.admin
+    aliases: [rtpa]
+permissions:
+    regionrtp.rtp:
+        description: Allows the player to use /rtp
+        default: false
+    regionrtp.rtp.others:
+        description: Allows the player to use /rtp <player>
+        default: false
+    regionrtp.admin:
+        description: Allows the player to use /rtpadmin
+        default: false
+        children:
+            regionrtp.rtp.others: true
