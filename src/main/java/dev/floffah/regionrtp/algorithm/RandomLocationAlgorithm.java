@@ -98,6 +98,8 @@ public class RandomLocationAlgorithm {
                 }
             }
 
+            loc.add(0, 1, 0);
+
             return loc;
         }
 
