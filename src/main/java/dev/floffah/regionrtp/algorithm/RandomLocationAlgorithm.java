@@ -21,7 +21,9 @@ public class RandomLocationAlgorithm {
     ) {
         int tries = 0;
 
-        while (tries < this.plugin.getConfigProvider().getConfig().maxTries) {
+        finderLoop:while (
+            tries < this.plugin.getConfigProvider().getConfig().maxTries
+        ) {
             int x =
                 (int) (Math.random() * (region.maxX - region.minX)) +
                 region.minX;
@@ -47,18 +49,29 @@ public class RandomLocationAlgorithm {
                 continue;
             }
 
-            for (String disallowedBlock : this.plugin.getConfigProvider()
-                .getConfig()
-                .disallowedBlocks) {
-                if (
-                    loc
-                        .getBlock()
-                        .getType()
-                        .toString()
-                        .equalsIgnoreCase(disallowedBlock)
-                ) {
-                    tries++;
-                    continue;
+            if (
+                this.plugin.getConfigProvider()
+                    .getConfig()
+                    .disallowedBlocksEnabled
+            ) {
+                String feetBlockName = loc.getBlock().getType().toString();
+
+                for (String disallowedBlock : this.plugin.getConfigProvider()
+                    .getConfig()
+                    .disallowedBlocks) {
+                    this.plugin.getLogger()
+                        .info(
+                            loc.getBlock().getType().toString() +
+                            " = " +
+                            disallowedBlock +
+                            " : " +
+                            feetBlockName.equalsIgnoreCase(disallowedBlock)
+                        );
+
+                    if (feetBlockName.equalsIgnoreCase(disallowedBlock)) {
+                        tries++;
+                        continue finderLoop;
+                    }
                 }
             }
 

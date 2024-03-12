@@ -135,6 +135,14 @@ public class RandomTP implements CommandExecutor, TabCompleter {
         @NotNull String alias,
         @NotNull String[] args
     ) {
-        return null;
+        if (args.length == 1) {
+            return this.plugin.getConfigProvider()
+                .getRegions()
+                .regions.stream()
+                .map(r -> r.name)
+                .toList();
+        }
+
+        return List.of();
     }
 }

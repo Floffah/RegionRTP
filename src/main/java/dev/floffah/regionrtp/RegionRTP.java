@@ -44,6 +44,8 @@ public final class RegionRTP extends JavaPlugin {
         randomtpBukkitCommand.setExecutor(randomtpCommandInst);
         randomtpBukkitCommand.setTabCompleter(randomtpCommandInst);
 
+        this.randomLocationFinder = new RandomLocationAlgorithm(this);
+
         this.getLogger().info("RegionRTP enabled!");
     }
 

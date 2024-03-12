@@ -322,11 +322,11 @@ public class RTPAdmin implements CommandExecutor, TabCompleter {
         helpMessage +=
         "<bold><gradient:#FCD05C:#4498DB>-- RegionRTP Admin --</gradient><reset><newline>";
         helpMessage +=
-        "<#FCD05C>- /rtpa reload <gray>- <#7BA8CC>Reload the plugin";
+        "<#FCD05C>- /rtpa reload <gray>- <#7BA8CC>Reload the plugin<newline>";
 
         if (sender instanceof Player) {
             helpMessage +=
-            "#FCD05C>- /rtpa createregion \\<name> <gray>- <#7BA8CC>Create a region<newline>";
+            "<#FCD05C>- /rtpa createregion \\<name> <gray>- <#7BA8CC>Create a region<newline>";
             helpMessage +=
             "<#FCD05C>- /rtpa deleteregion \\<name> <gray>- <#7BA8CC>Delete a region<newline>";
             helpMessage +=
