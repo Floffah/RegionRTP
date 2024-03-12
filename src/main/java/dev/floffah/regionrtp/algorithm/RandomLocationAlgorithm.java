@@ -98,7 +98,7 @@ public class RandomLocationAlgorithm {
                 }
             }
 
-            loc.add(0, 1, 0);
+            loc.add(0.5, 1, 0.5);
 
             return loc;
         }
