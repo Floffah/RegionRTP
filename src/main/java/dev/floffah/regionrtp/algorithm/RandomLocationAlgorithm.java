@@ -59,15 +59,6 @@ public class RandomLocationAlgorithm {
                 for (String disallowedBlock : this.plugin.getConfigProvider()
                     .getConfig()
                     .disallowedBlocks) {
-                    this.plugin.getLogger()
-                        .info(
-                            loc.getBlock().getType().toString() +
-                            " = " +
-                            disallowedBlock +
-                            " : " +
-                            feetBlockName.equalsIgnoreCase(disallowedBlock)
-                        );
-
                     if (feetBlockName.equalsIgnoreCase(disallowedBlock)) {
                         tries++;
                         continue finderLoop;
